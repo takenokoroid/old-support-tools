@@ -17,7 +17,7 @@
         {% else %}
         <div class="card-part flexbox-row">
             <div class="flexbox-column box-part-user">
-                <div class="user-id" aria-label="ユーザIDは{{ result["user"]["id"] }}">ID : {{ result["user"]["id"] }}</div>
+                <div class="user-id" aria-label="ユーザIDは{{ result["user"]["cgg_id"] }}">ID : {{ result["user"]["cgg_id"] }}</div>
                 <h2 aria-label="ユーザ名は{{ result["user"]["name"] }}">{{ result["user"]["name"] }}</h2>
             </div>
             <div class="box-part-role">

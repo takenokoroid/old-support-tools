@@ -1,14 +1,23 @@
+jQuery.validator.addMethod(
+    "regex",
+    function(value, element, regexp) {
+        var check = false;
+        return this.optional(element) || regexp.test(value);
+    }
+);
 $('#form').validate({
     // Validationルール
     rules: {
         userid: {
-          required: true, 
+          required: true,
+          regex : /^[a-zA-Z]{2}[0-9]{4}$/
         },
     },
     // エラーメッセージ
     messages: {
         userid: {
             required: '名前を入力してください',
+            regex : '先頭英字2桁+数字4桁で入力してください'
         },
     },
  
@@ -21,7 +30,6 @@ $('#form').validate({
     errorElement: "span",
     errorClass: "is-error",
 });
- 
 $(function () {
 	$('[data-toggle="tooltip"]').tooltip();
 });
