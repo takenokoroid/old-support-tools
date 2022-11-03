@@ -19,6 +19,7 @@
     │   │   └── javascript
     │   │       └── main.js: javascript
     │   └── templates
+    │       ├── base.html: basehtml
     │       └── index.html: テンプレートhtml
     ├── manage.py: flaskのコマンドを制御するためのファイル。
     └── requirements.txt: pythonのライブラリのインストール用のファイル
