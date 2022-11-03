@@ -6,12 +6,10 @@
     <form method="POST" action="/" id="form">
         <label for="userid">検索したいユーザID</label>
         <div class="input-group">
-            <div>
-                <input id="userid" type="text" name="userid" class="form-control"/>
-                <p class="is-error-userid"></p>
-            </div>
+            <input id="userid" type="text" name="userid" class="form-control"/>
             <button type="submit" class="btn btn-primary">検索</button>
         </div>
+        <span class="is-error-userid"></span>
     </form>
     <div class="w-50 text-left center-block">
         {% if not result %}

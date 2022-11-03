@@ -6,8 +6,12 @@ h2 {
 }
 .input-group {
     display: flex;
+    width: 50%;
     justify-content: center;
     margin: auto;
+}
+input#userid {
+    margin: 0 1rem;
 }
 
 .w-50 {
