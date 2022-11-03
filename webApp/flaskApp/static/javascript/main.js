@@ -1,13 +1,13 @@
 $('#form').validate({
     // Validationルール
     rules: {
-        username: {
+        userid: {
           required: true, 
         },
     },
     // エラーメッセージ
     messages: {
-        username: {
+        userid: {
             required: '名前を入力してください',
         },
     },
