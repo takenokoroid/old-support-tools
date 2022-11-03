@@ -22,3 +22,6 @@ $('#form').validate({
     errorClass: "is-error",
 });
  
+$(function () {
+	$('[data-toggle="tooltip"]').tooltip();
+});

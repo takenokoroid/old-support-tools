@@ -1,0 +1,46 @@
+*, *:before, *:after {
+	box-sizing: border-box;
+}
+h2 {
+    margin-top: 0;
+}
+.input-group {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+.w-50 {
+    width: 50%;
+}
+
+.card-part {
+    backdrop-filter: blur(20px);
+    box-shadow: 0 5px 20px rgba(255, 152, 79, 0.5);
+    border-radius: 10px;
+    padding: 1em 2em;
+    margin: 1em auto;
+    backdrop-filter: blur(10px);
+}
+.user-id {
+    margin-bottom: 1em;
+}
+.flexbox-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.flexbox-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.box-part-user {
+    width: 70%;
+}
+
+.box-part-role {
+    display: flex;
+    align-items: center;
+    margin: auto;
+}
