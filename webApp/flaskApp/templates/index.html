@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}サービス検索{% endblock %}
+
+{% block content_result %}
+    <form method="POST" action="/" id="form">
+        <label for="userid">ユーザネーム</label>
+        <input id="userid" type="text" name="userid" class="form-control"/>
+        <p class="is-error-userid"></p>
+        <button type="submit" class="btn btn-primary">検索</button>
+    </form>
+    <div>
+        <h2>結果一覧</h2>
+        {% if not result %}
+        <div></div>
+        {% else %}
+        <div>
+            <h3>ユーザID</h3>
+            {{ result["user"]["id"] }}
+            <h3>ユーザ名</h3>
+            {{ result["user"]["name"] }}
+            <h3>サービスの権限を持っているか?</h3>
+            {{ '権限なし' if result["service"]["deleted"] else '権限あり' }}
+        </div>
+        {% endif %}
+    </div>
+{% endblock %}
