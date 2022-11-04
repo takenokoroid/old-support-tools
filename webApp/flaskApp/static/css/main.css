@@ -41,8 +41,8 @@ h2 {
 .p-input__wrapper {
     display: flex;
     width: 50%;
-    justify-content: center;
     margin: auto;
+    justify-content: center;
 }
 
 .p-input__userid {
@@ -50,12 +50,10 @@ h2 {
 }
 
 .p-card__wrapper {
-    backdrop-filter: blur(20px);
-    box-shadow: 0 5px 20px rgba(255, 152, 79, 0.5);
-    border-radius: 10px;
     padding: 1em 2em;
     margin: 1em auto;
-    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(255, 152, 79, 0.5);
 }
 
 .p-card__userwrapper {
@@ -64,8 +62,8 @@ h2 {
 
 .p-card__rolewrapper {
     display: flex;
-    align-items: center;
     margin: auto;
+    align-items: center;
 }
 
 .p-card__userid {
