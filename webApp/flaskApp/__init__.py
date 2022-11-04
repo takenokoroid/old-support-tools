@@ -1,4 +1,4 @@
-from flask import Flask, jsonify, render_template
+from flask import Flask, jsonify, render_template, request
 from flask_sqlalchemy import SQLAlchemy
 from flask_bootstrap import Bootstrap
 
@@ -8,31 +8,48 @@ db = SQLAlchemy(app)
 bootstrap = Bootstrap(app)
 
 
-class User(db.Model):
+class Users(db.Model):
     __tablename__ = "users"
 
-    id = db.Column(db.Integer, primary_key=True)
+    id = db.Column(db.Integer, primary_key=True,
+                   unique=True, autoincrement=True)
+    cgg_id = db.Column(db.String, primary_key=True, unique=True)
     name = db.Column(db.String, nullable=False)
     services = db.relationship('Service')
-    def __init__(self, name):
+
+    def __init__(self, cgg_id, name):
+        self.cgg_id = cgg_id
         self.name = name
+
 
 class Service(db.Model):
-    __tablename__ = "services"
+    __tablename__ = "service"
 
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String, nullable=False)
+    id = db.Column(db.Integer, primary_key=True,
+                   unique=True, autoincrement=True)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'), nullable=False)
-    role = db.Column(db.String, nullable=True)
     deleted = db.Column(db.Boolean, nullable=False, )
 
-    def __init__(self, name, user_id, role):
-        self.name = name
+    def __init__(self, user_id, deleted):
         self.user_id = user_id
-        self.role = role
-        self.deleted = False
+        self.deleted = deleted
 
 
 @app.route("/")
-def hello_world():
-    return render_template("index.html")
+def search():
+    if request.method == "POST":
+        cgg_id = request.form["userid"]
+        user = Users.query.filter_by(cgg_id=cgg_id).first()
+        service = Service.query.filter_by(user_id=user.__dict__["id"]).first()
+        result = {
+            "user": {
+                "id": user.__dict__["cgg_id"],
+                "name": user.__dict__["name"]
+            },
+            "service": {
+                "deleted": service.__dict__["deleted"]
+            }
+        }
+        return render_template("index.html", result=result)
+    else:
+        return render_template("index.html")
