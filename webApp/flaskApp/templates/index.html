@@ -4,9 +4,9 @@
 
 {% block content_result %}
     <form method="POST" action="/" id="form">
-        <label for="userid">検索したいユーザID</label>
-        <div class="p-input__wrapper">
-            <input id="userid" type="text" name="userid" class="form-control p-input__userid"/>
+        <label class="p-form__label" for="userid">検索したいユーザID</label>
+        <div class="p-form__wrapper">
+            <input id="userid" type="text" name="userid" class="form-control p-form__userid"/>
             <button type="submit" class="btn btn-primary">検索</button>
         </div>
         <span class="is-error-userid" role="alert"></span>

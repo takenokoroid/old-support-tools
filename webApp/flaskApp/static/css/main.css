@@ -38,15 +38,19 @@ h2 {
 /* Project
    ----------------------------------------------------------------- */
 
-.p-input__wrapper {
+.p-form__wrapper {
     display: flex;
     width: 50%;
     margin: auto;
     justify-content: center;
 }
 
-.p-input__userid {
+.p-form__userid {
     margin: 0 1rem;
+}
+
+.p-form__label {
+    font-size: 2rem;
 }
 
 .p-card__wrapper {
