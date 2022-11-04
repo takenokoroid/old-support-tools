@@ -11,10 +11,10 @@
         </div>
         <span class="is-error-userid" role="alert"></span>
     </form>
-    <div class="c-width-50 text-left center-block">
+    <div class="c-width--50 text-left center-block">
         {% if result %}
-        <div class="p-card__wrapper c-flexbox-row">
-            <div class="c-flexbox-column p-card__userwrapper">
+        <div class="p-card__wrapper c-flexbox--row">
+            <div class="c-flexbox--column p-card__userwrapper">
                 <div class="p-card__userid" aria-label="ユーザIDは{{ result["user"]["cgg_id"] }}">ID : {{ result["user"]["cgg_id"] }}</div>
                 <h2 aria-label="ユーザ名は{{ result["user"]["name"] }}">{{ result["user"]["name"] }}</h2>
             </div>

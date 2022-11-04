@@ -21,16 +21,16 @@ h2 {
    ----------------------------------------------------------------- */
 
 
-.c-width-50 {
+.c-width--50 {
     width: 50%;
 }
 
-.c-flexbox-row {
+.c-flexbox--row {
     display: flex;
     flex-direction: row;
 }
 
-.c-flexbox-column {
+.c-flexbox--column {
     display: flex;
     flex-direction: column;
 }
