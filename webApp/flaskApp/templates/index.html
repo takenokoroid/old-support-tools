@@ -5,22 +5,20 @@
 {% block content_result %}
     <form method="POST" action="/" id="form">
         <label for="userid">検索したいユーザID</label>
-        <div class="input-group">
-            <input id="userid" type="text" name="userid" class="form-control"/>
+        <div class="p-input__wrapper">
+            <input id="userid" type="text" name="userid" class="form-control p-input__userid"/>
             <button type="submit" class="btn btn-primary">検索</button>
         </div>
-        <span class="is-error-userid"></span>
+        <span class="is-error-userid" role="alert"></span>
     </form>
-    <div class="w-50 text-left center-block">
-        {% if not result %}
-        <div></div>
-        {% else %}
-        <div class="card-part flexbox-row">
-            <div class="flexbox-column box-part-user">
-                <div class="user-id" aria-label="ユーザIDは{{ result["user"]["cgg_id"] }}">ID : {{ result["user"]["cgg_id"] }}</div>
+    <div class="c-width-50 text-left center-block">
+        {% if result %}
+        <div class="p-card__wrapper c-flexbox-row">
+            <div class="c-flexbox-column p-card__userwrapper">
+                <div class="p-card__userid" aria-label="ユーザIDは{{ result["user"]["cgg_id"] }}">ID : {{ result["user"]["cgg_id"] }}</div>
                 <h2 aria-label="ユーザ名は{{ result["user"]["name"] }}">{{ result["user"]["name"] }}</h2>
             </div>
-            <div class="box-part-role">
+            <div class="p-card__rolewrapper">
                 {% if not result["service"]["deleted"] %}
                 <img alt="権限あり" data-toggle="tooltip" data-placement="top" title="権限あり" src="https://img.icons8.com/external-others-phat-plus/64/null/external-authentication-biometric-outline-others-phat-plus.png"/>
                 {% else %}
