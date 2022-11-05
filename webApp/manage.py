@@ -26,13 +26,12 @@ def init():
 def create_db():
     db.drop_all()
     db.create_all()
-    init()
     db.session.commit()
 
-# @cli.command("seed_db")
-# def seed_db():
-#     db.session.add(User(email="michael@mherman.org"))
-#     db.session.commit()
+@cli.command("seed_db")
+def seed_db():
+    init()
+    db.session.commit()
 
 
 if __name__ == "__main__":
