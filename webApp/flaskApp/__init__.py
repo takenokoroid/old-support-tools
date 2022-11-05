@@ -35,7 +35,7 @@ class Service(db.Model):
         self.deleted = deleted
 
 
-@app.route("/")
+@app.route("/", methods=["GET", "POST"])
 def search():
     if request.method == "POST":
         cgg_id = request.form["userid"]
