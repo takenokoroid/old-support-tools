@@ -18,11 +18,11 @@
                 <div class="p-card__userid" aria-label="ユーザIDは{{ result["user"]["cgg_id"] }}">ID : {{ result["user"]["cgg_id"] }}</div>
                 <h2 aria-label="ユーザ名は{{ result["user"]["name"] }}">{{ result["user"]["name"] }}</h2>
             </div>
-            <div class="p-card__rolewrapper">
+            <div class="p-card__deletedwrapper">
                 {% if not result["service"]["deleted"] %}
-                <img alt="権限あり" data-toggle="tooltip" data-placement="top" title="権限あり" src="https://img.icons8.com/external-others-phat-plus/64/null/external-authentication-biometric-outline-others-phat-plus.png"/>
+                <img alt="利用中" data-toggle="tooltip" data-placement="top" title="権限あり" src="https://img.icons8.com/external-others-phat-plus/64/null/external-authentication-biometric-outline-others-phat-plus.png"/>
                 {% else %}
-                <img alt="権限なし" data-toggle="tooltip" data-placement="top" title="権限なし" src="https://img.icons8.com/external-others-phat-plus/64/null/external-authentication-biometric-outline-others-phat-plus-2.png"/>
+                <img alt="解除済み" data-toggle="tooltip" data-placement="top" title="権限なし" src="https://img.icons8.com/external-others-phat-plus/64/null/external-authentication-biometric-outline-others-phat-plus-2.png"/>
                 {% endif %}
             </div>
         </div>

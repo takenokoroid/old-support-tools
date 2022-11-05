@@ -64,7 +64,7 @@ h2 {
     width: 70%;
 }
 
-.p-card__rolewrapper {
+.p-card__deletedwrapper {
     display: flex;
     margin: auto;
     align-items: center;
