@@ -73,3 +73,8 @@ h2 {
 .p-card__userid {
     margin-bottom: 1em;
 }
+
+.p-error__wrapper {
+    text-align: center;
+    padding-top: 1rem;
+}
