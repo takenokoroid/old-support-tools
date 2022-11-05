@@ -43,7 +43,7 @@ def search():
         service = Service.query.filter_by(user_id=user.__dict__["id"]).first()
         result = {
             "user": {
-                "id": user.__dict__["cgg_id"],
+                "cgg_id": user.__dict__["cgg_id"],
                 "name": user.__dict__["name"]
             },
             "service": {
