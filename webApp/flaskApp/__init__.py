@@ -42,10 +42,13 @@ def search():
         cgg_id = request.form["userid"]
 
         user = Users.query.filter_by(cgg_id=cgg_id).first()
-        service = Service.query.filter_by(user_id=user.__dict__["id"]).first()
-
-        if user is None or service is None:
+        if user is None:
             return render_template("index.html", result=result)
+
+        service = Service.query.filter_by(user_id=user.__dict__["id"]).first()
+        if service is None:
+            return render_template("index.html", result=result)
+
         result = {
             "user": {
                 "cgg_id": user.__dict__["cgg_id"],
