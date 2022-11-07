@@ -1,0 +1,28 @@
+{% extends 'bootstrap/base.html' %}
+{% block styles %}
+{{super()}}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+{% endblock %}
+{% block scripts %}
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/jquery.validate.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.2/additional-methods.min.js"></script>
+<script src="{{url_for('static', filename='javascript/main.js')}}"></script>
+{{super()}}
+{% endblock %}
+{% block navbar %}
+<div class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">最強防御セキュリティのサポートツール</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block content %}
+<div class="container text-center">
+    
+    {% block content_result %}
+    {% endblock %}
+</div>
+{% endblock %}

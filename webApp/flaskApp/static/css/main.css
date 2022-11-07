@@ -1,0 +1,80 @@
+/* ==========================================================================
+   Foundation
+   ========================================================================== */
+
+/* Reset
+   ----------------------------------------------------------------- */
+*, *:before, *:after {
+	box-sizing: border-box;
+}
+/* Base
+   ----------------------------------------------------------------- */
+h2 {
+    margin-top: 0;
+}
+
+/* ==========================================================================
+   Object
+   ========================================================================== */
+
+/* Component
+   ----------------------------------------------------------------- */
+
+
+.c-width--50 {
+    width: 50%;
+}
+
+.c-flexbox--row {
+    display: flex;
+    flex-direction: row;
+}
+
+.c-flexbox--column {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Project
+   ----------------------------------------------------------------- */
+
+.p-form__wrapper {
+    display: flex;
+    width: 50%;
+    margin: auto;
+    justify-content: center;
+}
+
+.p-form__userid {
+    margin: 0 1rem;
+}
+
+.p-form__label {
+    font-size: 2rem;
+}
+
+.p-card__wrapper {
+    padding: 1em 2em;
+    margin: 1em auto;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(255, 152, 79, 0.5);
+}
+
+.p-card__userwrapper {
+    width: 70%;
+}
+
+.p-card__deletedwrapper {
+    display: flex;
+    margin: auto;
+    align-items: center;
+}
+
+.p-card__userid {
+    margin-bottom: 1em;
+}
+
+.p-error__wrapper {
+    text-align: center;
+    padding-top: 1rem;
+}

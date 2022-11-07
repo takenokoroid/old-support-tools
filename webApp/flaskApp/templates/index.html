@@ -1,22 +1,33 @@
-{% extends 'bootstrap/base.html' %}
-{% block styles %}
-{{super()}}
-<link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
-{% endblock %}
-{% block scripts %}
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.2/dist/jquery.validate.js"></script>
-<script src="{{url_for('static', filename='javascript/main.js')}}"></script>
-{{super()}}
-{% endblock %}
-{% block content %}
-<div class="container">
-    <h1>最強のサポートツール</h1>
-    <form method="POST" action="" id="form">
-        <label for="username">ユーザネーム</label>
-        <input id="username" type="text" name="username" class="form-control"/>
-        <p class="is-error-username"></p>
-        <button type="submit" class="btn btn-primary">検索</button>
+{% extends 'base.html' %}
+
+{% block title %}最強防御セキュリティのサポートツールのユーザ検索{% endblock %}
+
+{% block content_result %}
+    <form method="POST" action="/" id="form">
+        <label class="p-form__label" for="userid">検索したいユーザID</label>
+        <div class="p-form__wrapper">
+            <input id="userid" type="text" name="userid" class="form-control p-form__userid"/>
+            <button type="submit" class="btn btn-primary">検索</button>
+        </div>
+        <span class="is-error-userid" role="alert"></span>
     </form>
-</div>
+    <div class="c-width--50 text-left center-block">
+        {% if result %}
+        <div class="p-card__wrapper c-flexbox--row">
+            <div class="c-flexbox--column p-card__userwrapper">
+                <div class="p-card__userid" aria-label="ユーザIDは{{ result["user"]["cgg_id"] }}">ID : {{ result["user"]["cgg_id"] }}</div>
+                <h2 aria-label="ユーザ名は{{ result["user"]["name"] }}">{{ result["user"]["name"] }}</h2>
+            </div>
+            <div class="p-card__deletedwrapper">
+                {% if not result["service"]["deleted"] %}
+                <img alt="利用中" data-toggle="tooltip" data-placement="top" title="権限あり" src="https://img.icons8.com/external-others-phat-plus/64/null/external-authentication-biometric-outline-others-phat-plus.png"/>
+                {% else %}
+                <img alt="解除済み" data-toggle="tooltip" data-placement="top" title="権限なし" src="https://img.icons8.com/external-others-phat-plus/64/null/external-authentication-biometric-outline-others-phat-plus-2.png"/>
+                {% endif %}
+            </div>
+        </div>
+        {% else %}
+            <p class="p-error__wrapper">ユーザが存在しませんでした</p>
+        {% endif %}
+    </div>
 {% endblock %}
